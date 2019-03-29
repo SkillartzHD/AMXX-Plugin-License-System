@@ -32,7 +32,9 @@ public CheckLicense_Handler(Index, Error)
 	HTTP2_getData(szData, 63, iLen);
 	if (!equal(szData, "true", 4))
 	{
-		pause("acd", "LicensedPlugin.amxx", "");//Rename LicensedPlugin.amxx to Your Plugin Name
+		new pluginID[80]
+		get_plugin(-1,pluginID,charsmax(pluginID)) // automatically read name plugin .amxx
+		pause("acd", pluginID,"")
 		server_print("Licensed Plugin - Has lost license !");//Rename Licensed Plugin to Your Plugin Name or delete this line
 	}
 	return PLUGIN_CONTINUE;
